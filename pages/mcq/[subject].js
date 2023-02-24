@@ -6,6 +6,7 @@ import { dataSurveying } from "@/datamcq/dataSurveying";
 import { dataGeotechnical } from "@/datamcq/dataGeotechnical";
 import { dataConstructionManagement } from "@/datamcq/dataConstructionManagement";
 import { dataEstimating } from "@/datamcq/dataEstimating";
+import { dataSOM } from "@/datamcq/dataSOM";
 
 function Subject() {
     const router = useRouter()
@@ -16,6 +17,9 @@ function Subject() {
     }
     var mcqData
     switch (subject) {
+        case "som":
+            mcqData = [...dataSOM]
+            break;
         case "rcc":
             mcqData = [...dataRCC]
             break;
