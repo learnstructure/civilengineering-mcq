@@ -9,6 +9,22 @@ body {
   font-size: 1rem;
 }
 
+.site-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+
+  text-shadow: 1px 1px 2px #999;
+  line-height: 1;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
 .mainNav {
   position: -webkit-sticky;
   position: sticky;
@@ -19,43 +35,48 @@ body {
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0rem 0.5rem;
+
 }
 
 .navbar {
   display: flex;
 }
 
-.navbarLink {
-  color: #666;
+.navbar a {
+
   text-align: center;
   padding: 0.5rem 20px;
   text-decoration: none;
   border-radius: 0.2rem;
 }
 
-.navbarLinkActive {
-  color: #666;
-  text-align: center;
-  padding: 0.5rem 20px;
-  text-decoration: none;
-  border-radius: 0.2rem;
+
+.activeLink {
   color: white;
   background-color: #04AA6D;
 }
 
-.navbarLink:hover {
+.inactiveLink {
+  color: #666;
+}
+
+.navbar a:hover:not(.activeLink) {
   background-color: #ddd;
 }
 
 .icon {
   display: none;
-  color: #138c11;
-  font-size: 1.3rem;
+  color: hsl(119, 100%, 17%);
+  font-size: 1.5rem;
+  margin-right: 0.7rem;
 }
 
 @media screen and (max-width: 768px) {
-  .navbar {
+  .mainNav {
+    justify-content: space-between;
+  }
+
+  .navbar a:not(.activeLink) {
     display: none;
   }
 
@@ -70,6 +91,12 @@ body {
     display: flex;
     flex-direction: column;
 
+  }
+
+  .navbar.responsive a {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
   }
 
